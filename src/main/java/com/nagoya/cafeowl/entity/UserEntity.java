@@ -1,5 +1,6 @@
 package com.nagoya.cafeowl.entity;
 
+import com.nagoya.cafeowl.dto.SignUpDto;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -21,10 +22,23 @@ public class UserEntity {
     private String id;
     private String email;
     private String password;
+    private String name;
     private String phoneNumber;
     private String userType;
     private String token;
     private LocalDateTime createdAt;
     private LocalDateTime editedAt;
     private LocalDateTime lastLoginAt;
+
+    public UserEntity(SignUpDto dto){
+        this.id = dto.getId();
+        this.email = dto.getEmail();
+        this.password = dto.getPassword();
+        this.name = dto.getName();
+        this.phoneNumber = dto.getPhoneNumber();
+        this.userType = dto.getUserType();
+        this.token = "";
+        this.createdAt = LocalDateTime.now();
+        this.editedAt = LocalDateTime.now();
+    }
 }

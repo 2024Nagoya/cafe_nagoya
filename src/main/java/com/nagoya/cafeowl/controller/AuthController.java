@@ -14,10 +14,7 @@ public class AuthController {
     @PostMapping("/signup")
     public ResponseDto<?> signUp(@RequestBody SignUpDto requestBody){
         ResponseDto<?> result = authService.signUp(requestBody);
-        if(result.isResult()){
-            System.out.println("회원가입 성공!!!!");
-        }
-        System.out.println(requestBody.toString());
+        System.out.println("Signup response: " + result);
         return result;
     }
 }

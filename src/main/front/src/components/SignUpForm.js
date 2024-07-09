@@ -34,12 +34,30 @@ function SignUpForm() {
             } else {
                 console.error('회원가입 실패:', response.data);
                 alert(response.data.message); // 실패 메시지 출력
-                navigate('/'); // 실패 시 이동
+                setFormData({
+                    id: '',
+                    email: '',
+                    name: '',
+                    password: '',
+                    confirmPassword: '',
+                    phoneNumber: '',
+                    userType: 'user'
+                });
+                navigate('/api/auth/signup'); // 실패 시 이동
             }
         } catch (error) {
             console.error('회원가입 실패:', error);
             alert('회원가입에 실패했습니다!');
-            navigate('/'); // 실패 시 이동
+            setFormData({
+                id: '',
+                email: '',
+                name: '',
+                password: '',
+                confirmPassword: '',
+                phoneNumber: '',
+                userType: 'user'
+            });
+            navigate('/api/auth/signup'); // 실패 시 이동
         }
     }
 

@@ -6,7 +6,7 @@ import '../Styles.css';
 function MainScreenForm() {
     const navigate = useNavigate();
     const handleLogin = () => {
-        navigate('')
+        navigate('/login')
     }
 
     const handleSignUp = () => {
@@ -20,7 +20,7 @@ function MainScreenForm() {
                 <p>나만의 카페찾기</p>
             </header>
             <main className="content">
-                <button className="button">로그인</button>
+                <button className="button" onClick={handleLogin}>로그인</button>
                 <button className="button" onClick={handleSignUp}>회원가입</button>
             </main>
             <footer className="footer">

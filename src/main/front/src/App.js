@@ -1,26 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
-import axios from 'axios';
-
-function selectData(){
-  axios.post('/testData',["가","나","다"])
-      .then(function (res){
-        console.log(res)
-      });
-}
+import React from 'react';
+import SignUpForm from './components/SignUpForm'; // SignUpForm 컴포넌트의 경로를 정확하게 지정해야 합니다.
 
 function App() {
-
-  return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <div>
-            <button onClick={() =>selectData()}>조회</button>
-          </div>
-        </header>
-      </div>
-  );
+    return (
+        <div className="App">
+            <SignUpForm />
+        </div>
+    );
 }
 
 export default App;

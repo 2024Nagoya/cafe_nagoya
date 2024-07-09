@@ -1,13 +1,16 @@
 import React, {useState} from "react";
 import { useNavigate} from "react-router-dom";
 import axios from "axios";
-import '../MainScreenForm.css';
+import '../Styles.css';
 
 function MainScreenForm() {
     const navigate = useNavigate();
+    const handleLogin = () => {
+        navigate('')
+    }
 
     const handleSignUp = () => {
-        navigate('/signup');
+        navigate('/api/auth/signup');
     };
 
     return (

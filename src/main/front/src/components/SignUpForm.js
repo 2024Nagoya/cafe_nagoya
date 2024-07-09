@@ -27,11 +27,19 @@ function SignUpForm() {
         e.preventDefault();
         try {
             const response = await signUp(formData); // signUp 함수 호출
-            console.log('회원가입 성공:', response);
-            // 성공 처리 로직 추가
+            if (response.data.success) {
+                console.log('회원가입 성공:', response.data);
+                alert(response.data.message); // 성공 메시지 출력
+                navigate('/'); // 성공 시 이동
+            } else {
+                console.error('회원가입 실패:', response.data);
+                alert(response.data.message); // 실패 메시지 출력
+                navigate('/'); // 실패 시 이동
+            }
         } catch (error) {
             console.error('회원가입 실패:', error);
-            // 실패 처리 로직 추가
+            alert('회원가입에 실패했습니다!');
+            navigate('/'); // 실패 시 이동
         }
     }
 
@@ -92,9 +100,8 @@ function SignUpForm() {
                     placeholder="전화번호"
                     className="signup-input"
                 />
-                <button type="submit" className="signup-button">가입하기</button>
-                <button type="button" className="back-button" onClick={() => navigate('/')}>뒤로가기</button>
                 <button type="submit" className="signup-button">회원가입</button>
+                <button type="button" className="back-button" onClick={() => navigate('/')}>뒤로가기</button>
             </form>
         </div>
     );

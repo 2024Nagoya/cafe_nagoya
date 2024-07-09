@@ -8,7 +8,7 @@ function App() {
        <Router>
            <Routes>
                <Route path="/" element={<MainScreenForm />} />
-               <Route path="/signup" element={<SignUpForm />} />
+               <Route path="/api/auth/signup" element={<SignUpForm />} />
            </Routes>
        </Router>
     );

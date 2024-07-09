@@ -10,6 +10,7 @@ function Login() {
     const handleSubmit = (e) => {
         e.preventDefault();
         // 여기에 로그인 로직 구현
+        navigate('/CafeSearch');
         console.log('Login attempt with:', id, password);
     };
 

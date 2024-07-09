@@ -15,7 +15,6 @@ public class AuthController {
     public ResponseDto<?> signUp(@RequestBody SignUpDto requestBody){
         ResponseDto<?> result = authService.signUp(requestBody);
         System.out.println(requestBody.toString());
-        System.out.println("회원가입 성공!!!!");
         return result;
     }
 }

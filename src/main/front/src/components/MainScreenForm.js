@@ -7,7 +7,7 @@ function MainScreenForm() {
     const navigate = useNavigate();
 
     const handleSignUp = () => {
-        navigate('/signup');
+        navigate('/api/auth/signup');
     };
 
     return (

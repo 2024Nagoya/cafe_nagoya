@@ -14,7 +14,7 @@ public class AuthController {
     @PostMapping("/signup")
     public ResponseDto<?> signUp(@RequestBody SignUpDto requestBody){
         ResponseDto<?> result = authService.signUp(requestBody);
-        System.out.println(requestBody.toString());
+        System.out.println("Signup response: " + result);
         return result;
     }
 }

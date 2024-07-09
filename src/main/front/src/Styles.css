@@ -209,10 +209,6 @@ p {
     transition: background-color 0.3s ease;
 }
 
-.secondary-button:hover {
-    background-color: #e0e0e0;
-}
-
 .secondary-button:active {
     background-color: #d0d0d0;
 }

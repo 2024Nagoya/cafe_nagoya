@@ -26,39 +26,28 @@ function SignUpForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await signUp(formData); // signUp 함수 호출
-            if (response.data.success) {
-                console.log('회원가입 성공:', response.data);
-                alert(response.data.message); // 성공 메시지 출력
-                navigate('/'); // 성공 시 이동
+            const response = await signUp(formData);
+            if (response.result) {  // 'success' 대신 'result' 사용
+                console.log('회원가입 성공:', response);
+                alert(response.message);
+                navigate('/login');
             } else {
-                console.error('회원가입 실패:', response.data);
-                alert(response.data.message); // 실패 메시지 출력
-                setFormData({
-                    id: '',
-                    email: '',
-                    name: '',
-                    password: '',
-                    confirmPassword: '',
-                    phoneNumber: '',
-                    userType: 'user'
-                });
-                navigate('/api/auth/signup'); // 실패 시 이동
+                console.error('회원가입 실패:', response);
+                alert(response.message);
             }
         } catch (error) {
-            console.error('회원가입 실패:', error);
-            alert('회원가입에 실패했습니다!');
-            setFormData({
-                id: '',
-                email: '',
-                name: '',
-                password: '',
-                confirmPassword: '',
-                phoneNumber: '',
-                userType: 'user'
-            });
-            navigate('/api/auth/signup'); // 실패 시 이동
+            console.error('회원가입 요청 실패:', error);
+            alert('서버 오류로 회원가입에 실패했습니다.');
         }
+        setFormData({
+            id: '',
+            email: '',
+            name: '',
+            password: '',
+            confirmPassword: '',
+            phoneNumber: '',
+            userType: 'user'
+        });
     }
 
     return (

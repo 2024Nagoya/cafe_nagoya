@@ -30,7 +30,7 @@ function SignUpForm() {
             if (response.data.success) {
                 console.log('회원가입 성공:', response.data);
                 alert(response.data.message); // 성공 메시지 출력
-                navigate('/'); // 성공 시 이동
+                navigate('/login'); // 성공 시 이동
             } else {
                 console.error('회원가입 실패:', response.data);
                 alert(response.data.message); // 실패 메시지 출력

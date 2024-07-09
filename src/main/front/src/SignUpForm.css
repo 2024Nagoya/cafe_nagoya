@@ -51,6 +51,7 @@
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-bottom: 1rem;
 }
 
 .signup-button:hover {
@@ -58,5 +59,25 @@
 }
 
 .signup-button:active {
+    background-color: #00408a;
+}
+
+.back-button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+
+.back-button:active {
     background-color: #00408a;
 }
